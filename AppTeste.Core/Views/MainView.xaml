@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <d:MvxContentPage x:TypeArguments="viewModels:MainViewModel" 
+        xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:local="clr-namespace:AppTeste.Core.Views"
+        x:Class="AppTeste.Core.Views.MainView"
+        xmlns:viewModels="clr-namespace:AppTeste.Core.ViewModels;assembly=AppTeste.Core"
+        xmlns:d="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+        Title="App Teste"   
+        BackgroundColor="{StaticResource BackgroundScreenColor}">
+    
+    <ContentPage.Content>
+
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+        <StackLayout x:Name="stackMain" Padding="10,20,10,0" Orientation="Vertical" Grid.Row="0">
+        <Button Text="Modal Screen" Command="{Binding ShowModalCommand}" 
+            Style="{StaticResource ButtonStyle}" 
+            WidthRequest="200"
+            HorizontalOptions="Center" 
+            VerticalOptions="Start"/>
+        <Label Text="{Binding Text}" 
+            Style="{StaticResource LabelStyle}"/>
+        </StackLayout>
+        </Grid>
+
+        <!--#C0 indicates opacity-->
+        <ContentView x:Name="overlay" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"  AbsoluteLayout.LayoutFlags="All"
+                   BackgroundColor="#C0808080" Padding="10, 0" IsVisible="{Binding IsLoading}">
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center" >
+                    <ActivityIndicator  WidthRequest="110" HeightRequest="70" IsRunning="True" IsVisible="True" Color="White"
+                              HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="Aguarde" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </StackLayout>
+      </ContentView>
+            
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+    
+    </d:MvxContentPage>

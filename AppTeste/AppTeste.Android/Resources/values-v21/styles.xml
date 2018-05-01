@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!--
+        Base application theme for API 21+. This theme completely replaces
+        MyTheme from BOTH res/values/styles.xml on API 21+ devices.
+    -->
+  <style name="MainTheme" parent="MainTheme.Base">
+    <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:statusBarColor">@color/primaryDark</item>
+    <item name="android:navigationBarColor">@color/primaryDark</item>
+  </style>
+
+  <style name="MyThemeImage" parent="MainTheme.Base">
+    <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    <!--<item name="android:statusBarColor">@color/primaryDark</item>-->
+    <item name="android:navigationBarColor">@color/primaryDark</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <!--<item name="windowActionBarOverlay">false</item>-->
+  </style>
+
+  <!--<style name="MyTheme" parent="MyTheme.Base">
+    <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    <item name="android:statusBarColor">@android:color/transparent</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:colorPrimary">@color/primary_dark</item>
+    <item name="android:navigationBarColor">@color/primary_dark</item>
+  </style>-->
+</resources>

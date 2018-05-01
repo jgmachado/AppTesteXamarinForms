@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <d:MvxContentPage x:TypeArguments="viewModels:ModalViewModel" 
+        xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:local="clr-namespace:AppTeste.Core.Views"
+        x:Class="AppTeste.Core.Views.ModalView"
+        xmlns:viewModels="clr-namespace:AppTeste.Core.ViewModels;assembly=AppTeste.Core"
+        xmlns:d="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+        BackgroundColor="{StaticResource BackgroundScreenColor}">
+    
+    <ContentPage.Content>
+
+    <Grid AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15*" />
+                    <RowDefinition Height="85*" />
+                </Grid.RowDefinitions>
+                
+        <StackLayout x:Name="stack1" Padding="10,20,10,0" Orientation="Vertical" Grid.Row="0">
+            <Button Text="Close Modal" Command="{Binding CloseModalCommand}" 
+                Style="{StaticResource ButtonStyle}" 
+                WidthRequest="200"
+                HorizontalOptions="Center" 
+                VerticalOptions="Start"/>
+        </StackLayout>
+
+        <StackLayout x:Name="stack2" Padding="10,20,10,20" Orientation="Vertical" Grid.Row="1" BackgroundColor="Gray">
+
+                <WebView Source="{Binding Source}" 
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                />
+                        
+        </StackLayout>
+            
+    </Grid>
+
+    </ContentPage.Content>
+    
+    </d:MvxContentPage>

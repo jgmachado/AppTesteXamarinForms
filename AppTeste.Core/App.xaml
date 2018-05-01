@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<d:MvxFormsApplication xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AppTeste.Core.App" 
+    xmlns:d="clr-namespace:MvvmCross.Forms.Platform;assembly=MvvmCross.Forms">
+    <Application.Resources>
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+            
+          <!-- General -->
+          <Color x:Key="DescriptionColor">Gray</Color>
+          <Color x:Key="LabelColor">White</Color>
+          <Color x:Key="EntryColor">#000000</Color>
+          <Color x:Key="ButtonColor">White</Color>
+          <Color x:Key="BackgroundScreenColor">#455a64</Color>
+          
+          <OnPlatform x:Key="FontType"
+            x:TypeArguments="x:String">
+            <OnPlatform.iOS>Academy Engraved LET</OnPlatform.iOS>
+            <OnPlatform.Android>sans-serif</OnPlatform.Android>
+            <OnPlatform.WinPhone>Comic Sans MS</OnPlatform.WinPhone>
+          </OnPlatform>
+
+          <!-- Labels -->
+          <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="FontSize" >
+              <OnPlatform x:TypeArguments="x:Double"
+                  Android="18"
+                  iOS="18"
+                  WinPhone="18" />
+            </Setter>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="{StaticResource LabelColor}"/>
+            <Setter Property="FontFamily" Value="{StaticResource FontType}"/>
+          </Style>
+            
+          <!-- Buttons -->
+          <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" >
+              <OnPlatform x:TypeArguments="x:Double"
+                  Android="18"
+                  iOS="18"
+                  WinPhone="18" />
+            </Setter>
+            <Setter Property="BackgroundColor" >
+              <OnPlatform x:TypeArguments="Color"
+                  Android="#B85200"
+                  iOS="#B85200"
+                  WinPhone="#B85200" />
+            </Setter>
+            <!--<Setter Property="FontAttributes" Value="Bold"/>-->
+            <Setter Property="TextColor" Value="{StaticResource ButtonColor}"/>
+            <Setter Property="FontFamily" Value="{StaticResource FontType}"/>
+          </Style>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</d:MvxFormsApplication>
